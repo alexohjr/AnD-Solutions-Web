@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main">
+
+	<!-- 견적상담 insert -->
+	<!-- <insert id="insertInquiry" parameterType="com.solutions.web.main.models.InquiryDTO">
+		insert into inquiry (
+			name,
+			phone,
+			email,
+			queContent,
+			<if test="queFilePath != null">
+			queFilePath,
+			</if>
+			queDate
+		) values (
+			#{name},
+			#{phone},
+			#{email},
+			#{queContent},
+			<if test="queFilePath != null">
+			#{queFilePath},				
+			</if>
+			convert(nvarchar(16), getDate(), 120)				
+		)
+	</insert> -->
+	
+	<insert id="insertInquiry" parameterType="com.solutions.web.main.models.InquiryDTO">
+		{ call dbo.SP_INQUIRY_SET
+			( 
+				'I', 
+				0,
+				#{name}, 
+				#{phone}, 
+				#{email}, 
+				#{queContent}, 
+				#{queFilePath}, 
+				NULL,
+				NULL,
+				NULL,
+				NULL
+			) 
+		}
+	</insert>
+	
+</mapper>

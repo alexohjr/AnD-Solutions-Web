@@ -1,0 +1,19 @@
+#header {
+	opacity: 0;
+	visibility: hidden;	
+}
+
+#header.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+header img {
+    position: fixed;
+    width: 260px;
+    margin-left: 200px;
+    margin-top: 25px;
+    z-index: 99;
+    cursor: pointer;
+}
+

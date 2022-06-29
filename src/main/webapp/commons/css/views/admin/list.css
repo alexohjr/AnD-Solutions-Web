@@ -1,0 +1,411 @@
+.container-inner {
+	width: 1280px;
+	margin: 0 auto;
+	margin-top: 60px;
+	min-height: 700px;
+}
+
+.title {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+}
+
+.title .btn_area {
+	position: absolute;
+	right:0;
+	top: 0;
+}
+
+.title .btn_area .btn {
+	float: right;
+    width: 100px;
+    height: 40px;
+    background: #fff;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 72px 10px;
+    padding-right: 30px;
+    /* font-weight: bold; */
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 14px;
+}
+
+.title .btn_area .logoutBtn {
+    background-image: url(../../../../resources/img/common/logout.png);
+    background-size: 18px;
+}
+
+.title .btn_area .homeBtn {
+	 margin-right: 10px;
+	background-image: url(../../../../resources/img/common/home.png);
+	background-size: 17px;
+}
+
+.sub_title {
+	margin-top: 30px;
+}
+
+.sub_title > h3 {
+	color: #ff9500;
+	font-weight: bold;
+	font-size: 22px;
+	float: left;
+	margin-top: 7px;
+}
+
+.sub_title .listSelect {
+    float: left;
+    width: 140px;
+    height: 36px;
+    padding-left: 5px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+}
+
+.sub_title  .search_area {
+	float: right;
+}
+
+.sub_title .search_area .searchSelect {
+    width: 90px;
+    height: 36px;
+    float: left;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+
+.sub_title .search_area .searchInput {
+	width: 200px;
+    height: 36px;
+    float: left;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    padding-left: 5px;
+}
+
+.sub_title .search_area .searchBtn {
+	width: 50px;
+	height: 36px;
+	background: #fff;
+	cursor: pointer;
+	background-image: url(../../../../resources/img/common/search_btn.png);
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: left;
+	border: 1px solid #ccc;
+}
+
+.list_area {
+	margin-top: 90px;
+	font-size: 15px;
+}
+
+.list_area .list_header {
+	width: 100%;
+	text-align: center;
+	background: #eaeaea;
+	border-top: 1px solid #bbbbbb;
+	height: 40px;
+	line-height: 40px;
+}
+
+.list_area .list_header li {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.list_area .list_header li:nth-child(1) { width: 22%; }
+.list_area .list_header li:nth-child(2) { width: 8%; }
+.list_area .list_header li:nth-child(3) { width: 10%; }
+.list_area .list_header li:nth-child(4) { width: 18%; }
+.list_area .list_header li:nth-child(5) { width: 13%; }
+.list_area .list_header li:nth-child(6) { width: 13%; }
+.list_area .list_header li:nth-child(7) { width: 13%; }
+
+
+.list_area .infoText {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.list_area .list_title_area {
+	width: 100%;
+}
+
+.list_area .list_title_area > li {
+	border-bottom: 1px solid #bbbbbb;
+	text-align: center;
+}
+
+.list_area .list_title {
+	position: relative;
+	text-align: center;
+	color: #333;
+	width: 100%;
+	cursor: pointer;
+}
+
+.list_area .list_title:hover {
+	background: #f1f1f1;
+}
+
+.list_area .list_title .new_icon {
+	position: absolute;
+    font-size: 10px;
+    left: 275px;
+    top: 10px;
+    background: #ff9500;
+    padding: 3px;
+    color: #fff;
+}
+
+.list_area .list_title > ul > li {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 35px;
+    height: 35px;
+}
+
+.list_area .list_title > ul > li:nth-child(1) { 
+	width: 22%;
+	text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    
+}
+
+
+.list_area .list_title > ul > li:nth-child(2) { width: 8%; }
+.list_area .list_title > ul > li:nth-child(3) { width: 10%; }
+.list_area .list_title > ul > li:nth-child(4) { width: 18%; }
+.list_area .list_title > ul > li:nth-child(5) { width: 13%; }
+.list_area .list_title > ul > li:nth-child(6) { width: 13%; }
+.list_area .list_title > ul > li:nth-child(7) { width: 13%; }
+
+.list_area .list_title > ul > li:nth-child(n+2):nth-child(-n+4) {
+	 overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal; 
+}
+
+.list_area .list_title .unanswered {
+	border: 1px solid #e4e4e4;
+	padding: 4px 30px;
+	font-size: 14px;
+	color: #6f6f6f;
+}
+
+.list_area .list_title .answered {
+    border: none;
+    background: #ff9500;
+    padding: 4px 25px;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+.list_area .list_title_area .list_content {
+    width: 100%;
+    margin: 10px 0 15px 0;
+    background: #f5f5f5;
+    border-radius: 4px;
+    padding: 15px 20px 10px 20px;
+    display: none;
+    border: 1px solid #bfbfbf;
+}
+
+.list_area .list_title_area .list_content.show {
+	display: inline-block !important;
+}
+
+.list_area .list_title_area .list_content .file_area {
+    width: 420px;
+    height: 20px;
+    display: block;
+    float: right;
+    background: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.list_area .list_title_area .list_content .file_area .file_title {
+	max-width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.list_area .list_title_area .list_content .download_btn {
+	float: right;
+	margin-right: 10px;
+	color: #007bff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.list_area .list_title_area .list_content .content_area {
+	display: block;
+    float: left;
+    width: 100%;
+    min-height: 100px;
+    margin-top: 10px;
+    max-height: 400px;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.list_area .list_title_area .list_content .answer_area {
+	display: block;
+	float: left;
+	margin-top: 5px;
+	padding: 10px 0;
+	min-height: 100px;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+
+.list_area .list_title_area .list_content .answer_area p {
+	margin-bottom: 5px;
+}
+
+.list_area .list_title_area .list_content .deleteBtn, .list_area .list_title_area .list_content .answerBtn {
+	display: inline-block;
+    width: 120px;
+    height: 30px;
+    border: none;
+    margin-top: 10px;
+    float: right;
+    background: #6c757d;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.list_area .list_title_area .list_content .answerBtn {
+    background: #505050;
+    margin-left: 10px;
+}
+
+.list_area .list_title_area .list_content .deleteBtn {
+	background: #af4848;
+}
+
+
+.list_area .list_title_area .list_answer_area {
+	width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background: #fff;
+    display: none;
+}
+
+.list_area .list_title_area .list_answer_area.show {
+	display: inline-block !important;
+}
+ 
+.list_area .list_title_area .list_answer_area .answer_editor {
+	
+	width: 100%;
+	height: 500px;
+	
+	text-align: left;
+}
+
+.testtest {
+	width: 1000px;
+	height: 500px;
+}
+
+.list_area .list_title_area .list_answer_area .answer_btn_area {
+    display: block;
+    border: 1px solid #b5b5b5;
+    height: 50px;
+    margin-top: -3px;
+    border-top: none;
+    background: #f5f5f5;
+}
+
+.list_area .list_title_area .list_answer_area .answer_area_btn {
+	float: right;
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    
+    margin: 10px 10px 0 0;
+    font-size: 13px;
+}
+
+.list_area .list_title_area .list_answer_area .cancelBtn {
+	color: #FFF;
+	background: #505050;
+}
+
+.list_area .list_title_area .list_answer_area .confirmBtn {
+	color: #FFF;
+	background: #2c4ab9;
+	margin-right: 20px;
+}
+
+.paging_area {
+	width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.paging_area .pageNum {
+	color: #5a5a5a;
+	border: 1px solid #bbbbbb;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	line-height: 40px;
+	background: #fff;
+}
+
+.paging_area .selPageNum {
+	background: #5a5a5a;
+	color: #fff;
+	border: 1px solid #5a5a5a;
+}
+
+.listSelect, .searchSelect {
+	-webkit-appearance: none;  /* �꽕�씠�떚釉� �쇅�삎 媛먯텛湲� */
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../../../resources/img/common/down-arrow.png) no-repeat 95% 50%;  /* �솕�궡�몴 紐⑥뼇�쓽 �씠誘몄� */
+    background-size: 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.listSelect::-ms-expand, .searchSelect::-ms-expand {
+    display: none;
+}
+
+
+
+
+

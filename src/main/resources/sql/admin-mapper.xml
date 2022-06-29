@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+	<!-- 관리자 로그인 체크  -->
+	<!-- <select id="adminLogin" parameterType="com.solutions.web.admin.models.AdminDTO" resultType="String">
+		select id from admin where id = #{id} and pwd = #{pwd}		
+	</select> -->
+	
+	<!-- 관리자 로그인 체크  -->
+	<select id="adminLogin" parameterType="com.solutions.web.admin.models.AdminDTO" resultType="string">
+		{ call dbo.SP_ADMIN_GET
+			(
+				'S', #{id}, #{pwd}
+			)
+		}
+	</select>
+	
+	<!-- 견적요청글 리스트타입 카운트 -->
+	<!-- <select id="getInquiryTypeCount" resultType="com.solutions.web.admin.models.CountDTO">
+		select count(*) as totalCount, count(case when ansDate is null then 0 end) as unansweredCount, count(case when ansDate is not null then 0 end) as answeredCount from inquiry
+	</select> -->
+	
+	<!-- 견적요청글 리스트타입 카운트 -->
+	<select id="getInquiryTypeCount" resultType="com.solutions.web.admin.models.CountDTO">
+		{ call dbo.SP_INQUIRY_GET
+			(
+				'TC', NULL, NULL, NULL, NULL 		
+			)
+		}
+	</select>
+	
+	<!-- 견적요청글 카운트 -->
+	<select id="getInquiryCount" parameterType="com.solutions.web.admin.models.ListDTO" resultType="int">
+		select count(*) from 
+		(select * from TBL_inquiry
+			<if test='type == "unanswered"'>
+				where ansContent IS NULL
+			</if>
+			
+			<if test='type == "answered"'>
+				where ansContent IS NOT NULL
+			</if>
+		) a
+		
+		<if test="keyword != ''">
+			<where>
+				<if test='option == "name"'>
+					name like '%' + #{keyword} + '%'
+				</if>
+			
+				<if test='option == "content"'>
+					queContent like '%' + #{keyword} + '%'
+				</if>
+				
+				<if test='option == "phone"'>
+					phone like '%' + #{keyword} + '%'
+				</if>
+				
+				<if test='option == "email"'>
+					email like '%' + #{keyword} + '%'
+				</if>
+				
+				<if test='option == "all"'>
+					name like '%' + #{keyword} + '%' or queContent like '%' + #{keyword} + '%' or 
+					phone like '%' + #{keyword} + '%' or email like '%' + #{keyword} + '%'
+				</if>
+			</where>
+		</if>
+	</select>
+	
+	<!-- 견적요청글 카운트 -->
+	<!-- <select id="getInquiryCount" parameterType="com.solutions.web.admin.models.ListDTO" resultType="int">
+		{ call dbo.SP_INQUIRY_GET
+			(
+				'IC', #{type}, #{keyword}, #{option}, null
+			)
+		}
+	</select> -->
+	
+	<select id="getInquiryList" parameterType="com.solutions.web.admin.models.ListDTO" resultType="com.solutions.web.main.models.InquiryDTO">
+		select * from (
+			select row_number() over(order by code desc) rnum,
+			code, name, phone, email, queContent, substring(queFilePath, 15, len(queFilePath)) queFilePath, queDate, ansContent, ansFilePath, ansDate
+			from 
+			(select * from TBL_inquiry
+				<if test='type == "unanswered"'>
+					where ansContent IS Null
+				</if>
+			
+				<if test='type == "answered"'>
+					where ansContent IS NOT NULL
+				</if>
+			) ab
+			<if test="keyword != ''">
+				<where>
+					<if test='option == "name"'>
+						name like '%' + #{keyword} + '%'
+					</if>
+				
+					<if test='option == "content"'>
+						queContent like '%' + #{keyword} + '%'
+					</if>
+					
+					<if test='option == "phone"'>
+						phone like '%' + #{keyword} + '%'
+					</if>
+					
+					<if test='option == "email"'>
+						email like '%' + #{keyword} + '%'
+					</if>
+					
+					<if test='option == "all"'>
+						name like '%' + #{keyword} + '%' or queContent like '%' + #{keyword} + '%' or 
+						phone like '%' + #{keyword} + '%' or email like '%' + #{keyword} + '%'
+					</if>
+				</where>
+			</if>
+		) a 
+		where a.rnum between #{startRow} and #{endRow}  order by a.rnum
+	</select>
+	
+	<!-- <select id="getFilePath" resultType="String">
+		select queFilePath from inquiry where code = #{code}
+	</select> -->
+	
+	<select id="getFilePath" resultType="String">
+		{ call dbo.SP_INQUIRY_GET
+			(
+				'FP', NULL, NULL, NULL, #{code} 		
+			)
+		}
+	</select>
+	
+	<!-- <update id="updateInquiryAnswer" parameterType="com.solutions.web.main.models.InquiryDTO">
+		UPDATE inquiry SET ansContent = #{ansContent}, ansDate = convert(nvarchar(16), getDate(), 120) WHERE code = #{code}
+	</update> -->
+	
+	<update id="updateInquiryAnswer" parameterType="com.solutions.web.main.models.InquiryDTO">
+		{ call dbo.SP_INQUIRY_SET
+			( 
+				'U', #{code}, NULL, NULL, NULL, NULL, NULL, NULL, #{ansContent}, NULL, NULL
+			)
+		}
+	</update>
+	
+	<!-- <delete id="deleteInquiry" parameterType="int">
+		DELETE FROM inquiry WHERE code = #{code}
+	</delete> -->
+	
+	<delete id="deleteInquiry" parameterType="int">
+		{ call dbo.SP_INQUIRY_SET
+			(
+				'D', #{code}, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+			)
+		}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,130 @@
+#footer {
+	width: 100%;
+	min-width: 1280px;
+	height: 450px;
+	background-image: url(../../../resources/img/common/footer_background.jpg);
+	background-size: cover;
+    background-position: center center;
+    
+    opacity: 0;
+    visibility: hidden;
+}
+
+#footer.show {
+	opacity:1;
+	visibility: visible;
+}
+
+#footer-inner {
+	width: 100%;
+    margin: 0 auto;
+    position: relative;
+    color: #FFF;
+    max-width: 1200px;
+    height: 100%;
+}
+
+#footer-inner > div {
+	width: 800px;
+	height: 220px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#footer-inner > div > * {
+	position: absolute;
+}
+
+#footer-inner > div > h1 {
+        top: 125px;
+    left: 100px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#footer-inner > div > h2 {
+    font-size: 50px;
+    position: static;
+    padding-top: 60px;
+    text-align: center;
+}
+
+#footer-inner > div > p {
+    top: 128px;
+    left: 280px;
+    font-size: 17px;
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+#footer-inner > div > .btn_area {
+    top: 170px;
+    left: 278px;
+    z-index: 9;
+}
+
+#footer-inner > div > .btn_area .btn {
+	border: 1px solid #fff;
+    background: none;
+    width: 230px;
+    height: 65px;
+    color: #FFF;
+    font-weight: 500;
+    font-size: 17px;
+    overflow: hidden;
+	position: relative;
+    display: inline-block;
+    color: #fff;
+    line-height: 65px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#footer-inner > div > .btn_area .btn:after {
+	content: "";
+	height: 155px;
+	left: -75px;
+	opacity: 0.3;
+	position: absolute;
+	top: -50px;
+	background: #fff;
+	-webkit-transform: rotate(35deg);
+	transform: rotate(35deg);
+	-webkit-transition: all .55s cubic-bezier(0.19, 1, 0.22, 1);
+	transition: all .55s cubic-bezier(0.19, 1, 0.22, 1);
+	width: 30px;
+	z-index: 100;
+}
+
+#footer-inner > div > .btn_area .btn:hover:after {
+	left: 120%;
+}
+
+#footer-inner > div > .btn_area .mailBtn a {
+	color: #fff;
+    width: 100%;
+    display: table;
+}
+
+#footer-inner > div > .btn_area .btn:nth-child(2) {
+	margin-left: 20px;
+}
+
+#footer-inner > div > .info_area {
+    text-align: center;
+    line-height: 45px;
+    position: static;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+#footer-inner > div > .info_area span {
+	color: #e4e4e4;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#footer-inner > div > .info_area p {
+	color: #8c8c8c;
+}

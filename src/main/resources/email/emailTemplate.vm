@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div style="min-width: 800px; max-width: 800px; min-height: 600px; background-image: url(https://ifh.cc/g/oVVwb.jpg); background-repeat: no-repeat; background-size: cover; font-family: 'Nanum Gothic', sans-serif;">
+	
+		<div style="width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5)">
+		
+			<div style="width: 90%; margin: 0 auto; padding-top: 40px;">
+				<img src="https://ifh.cc/g/7sgww.png" style="width: 250px; float: left;" />
+			</div>
+			
+			<div style="margin: 0 auto; margin-top: 70px; width: 90%; color: #fff; font-size: 14px;">
+				<p>안녕하세요 ${name}고객님 (주)에이앤디솔루션스입니다.</p>
+				<p>고객님의 소중한 문의에 대한 답변메세지 입니다.</p>
+			</div>
+			
+			<div style="width: 90%; min-height: 300px; max-height: 500px; background: #fff; margin: 0 auto; margin-top: 30px; overflow: auto; font-size: 13px;">
+				<div style="margin: 20px;">
+					${content}
+				</div>
+			</div>
+			
+			<div style="width: 90%; margin: 0 auto; margin-top: 40px; text-align: center; padding-bottom: 40px;">
+		
+				<div style="width: 200px; height: 40px; background: #005180; border-radius: 10px; margin: 0 auto; line-height: 40px; font-size: 16px;">
+				  <a href="http://115.68.41.244:8055/andsolutions/main" style="width: 100%; display: block; text-decoration: none; color: #fff;">사이트 바로가기&emsp;></a>
+				</div>
+				
+				<p style="color: #fff; margin-top: 20px; font-size: 16px;">A&D Solutions&emsp;|&emsp;02.6269.6003&emsp;|&emsp;서울시 금천구 벚꽃로 278</p>
+				<p style="color: #8c8c8c; margin-top: 10px; font-size: 15px;">COPYRIGHT A&D Solutions. All Rights Reserved.</p>
+		
+			</div>
+		
+		</div>
+	
+	</div>
+
+</body>
+</html>

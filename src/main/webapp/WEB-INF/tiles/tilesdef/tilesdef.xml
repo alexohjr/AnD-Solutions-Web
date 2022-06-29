@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+  
+  <tiles-definitions>
+  
+  	<!-- templates -->
+  	<definition name="base_layout" template="/WEB-INF/tiles/template/layout.jsp">
+  		<put-attribute name="title" value=""></put-attribute>
+  		<put-attribute name="header" value="/WEB-INF/tiles/template/header.jsp"></put-attribute>
+  		<put-attribute name="body" value=""></put-attribute>
+  		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp"></put-attribute>
+  		<put-attribute name="favicon" value="favicon.png"></put-attribute>
+  		
+  		<put-list-attribute name="stylesheets">
+  			<add-attribute value="base/common"/>
+  			<add-attribute value="base/layout"/>
+  			<!-- <add-attribute value="prefixfree" /> -->
+  			<add-attribute value="base/header" />
+  			<add-attribute value="base/footer" />
+  			<add-attribute value="base/aos" />
+  			<add-attribute value="reset/reset" />
+  			<add-attribute value="fonts/fonts" />
+  			<add-attribute value="fontawesome/all.min" />
+  		</put-list-attribute>
+  		
+  		<put-list-attribute name="javascripts">
+  			<add-attribute value="base/jquery-3.3.1.min" />
+  			<add-attribute value="base/jquery-ui.min" />
+  			<add-attribute value="base/jquery.bxslider.min" />
+  			<!-- <add-attribute value="base/transit-0.9.12.min" /> -->
+  			<add-attribute value="base/utils" />
+  			<add-attribute value="base/header" />
+  			<add-attribute value="base/footer" />
+  			<add-attribute value="base/common" />
+  			<add-attribute value="base/aos" />
+  			<add-attribute value="fontawesome/all" />
+  		</put-list-attribute>
+  	
+  	</definition>
+  	
+  	<!-- templates -->
+  	<definition name="admin_layout" template="/WEB-INF/tiles/template/admin_layout.jsp">
+  		<put-attribute name="title" value=""></put-attribute>
+  		<put-attribute name="header" value="/WEB-INF/tiles/template/admin_header.jsp"></put-attribute>
+  		<put-attribute name="body" value=""></put-attribute>
+  		<put-attribute name="footer" value="/WEB-INF/tiles/template/admin_footer.jsp"></put-attribute>
+  		<put-attribute name="favicon" value="favicon.png"></put-attribute>
+  		  
+  		<put-list-attribute name="stylesheets">
+  			<!-- <add-attribute value="base/common"/> -->
+  			<add-attribute value="base/admin_layout"/>
+  			<!-- <add-attribute value="prefixfree" /> -->
+  			<add-attribute value="base/admin_header" />
+  			<add-attribute value="base/admin_footer" />
+  			<add-attribute value="base/bootstrap.min" />
+  			<add-attribute value="reset/reset" />
+  			<add-attribute value="fonts/fonts" />
+  			<add-attribute value="fontawesome/all.min" />
+  		</put-list-attribute>
+  		
+  		<put-list-attribute name="javascripts">
+  			<add-attribute value="base/jquery-3.3.1.min" />
+  			<add-attribute value="base/jquery-ui.min" />
+  			<add-attribute value="base/utils" />
+  			<add-attribute value="base/admin_header" />
+  			<add-attribute value="base/admin_footer" />
+  			<add-attribute value="base/common" />
+  			<add-attribute value="base/bootstrap.min" />
+  			<add-attribute value="fontawesome/all" />
+  		</put-list-attribute>
+  	</definition>
+  	
+  	<definition name="tiles/**" extends="base_layout">
+  		<put-attribute name="title" value="andsolutions"></put-attribute>
+  		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+  		<put-list-attribute name="stylesheets" inherit="true">
+  			<add-attribute value="views/{1}" />
+  		</put-list-attribute>
+  		<put-list-attribute name="javascripts" inherit="true">
+  			<add-attribute value="views/{1}" />
+  		</put-list-attribute>
+  	</definition>
+  	
+  	<definition name="admin_tiles/**" extends="admin_layout">
+  		<put-attribute name="title" value="andsolutions"></put-attribute>
+  		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+  		<put-list-attribute name="stylesheets" inherit="true">
+  			<add-attribute value="views/{1}" />
+  		</put-list-attribute>
+  		<put-list-attribute name="javascripts" inherit="true">
+  			<add-attribute value="views/{1}" />
+  		</put-list-attribute>
+  	</definition>
+  
+  </tiles-definitions>
+  

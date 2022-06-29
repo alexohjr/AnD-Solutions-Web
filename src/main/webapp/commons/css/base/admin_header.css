@@ -1,0 +1,26 @@
+#header-outer {
+	width: 100%;
+	height: 100px;
+	background: #2c4ab9;
+}  
+
+#header-inner {
+	width: 90%;
+	max-width: 1280px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 90px;
+	position: relative;
+}
+
+#header-inner img {
+	width: 350px;
+	cursor: pointer;
+}
+
+
+
+
+
+
